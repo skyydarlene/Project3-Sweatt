@@ -1,21 +1,17 @@
-let y = 0;
-let speed = 3;
+let img;
+let mask;
+
+function preload() {
+  img = loadImage("assets/purple2.jpeg");
+  mask = loadImage("assets/black4.png");
+}
 
 function setup() {
-  createCanvas(400, 400);
-  rectMode(CENTER);
+  createCanvas(1800,800);
+  imageMode(CENTER);
 }
 
 function draw() {
-  background(125);
-
-  y += speed; 
-  rect(width/2,y,40,40);
-
-  If (y > 400 || y < 0) { 
-  speed *= -1;
-  }
+  image(img,width/2,height/2);  
+  image(mask, mouseX, mouseY);
 }
-
-
-
